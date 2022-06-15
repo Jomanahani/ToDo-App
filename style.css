@@ -78,3 +78,33 @@ body {
 body.dark {
 	background: #292C35;
 }
+
+form{
+    position: absolute;
+    top:28%;
+    left:33%;
+    background-color: rgb(148, 146, 146);
+    border-radius: 6px ;
+    padding:15px;
+    display: flex;
+    align-items: center;
+}
+
+.task-input{
+    width: 550px;
+    height: 50px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-right: 0px;
+    border-radius: 6px 0 0 6px;
+}
+
+.task-boutton{
+    height: 50px;
+    width: 50px;
+    border: 1px solid #ddd;
+    border-left: 0px;
+    color: #292C35;
+    border-radius:0 6px 6px 0;
+    cursor: pointer;
+}
