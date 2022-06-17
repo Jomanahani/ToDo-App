@@ -12,36 +12,26 @@ chk.addEventListener('change', () => {
 	document.body.classList.toggle('dark');
 });
 
-addBoutton.addEventListener('click',addTask)
-
-function addTask(e){
-    e.preventdefult()
+addBoutton.onclick = function (e){
+    e.preventDefault()
     if(taskInput.value){
-        let taskdiv = document.createElement('div') 
-        taskContainer.appendChild(taskdiv)
-
-        let taskItem = document.createElement('li')
-        taskItem.textContent=taskInput.value
-        taskdiv.appendChild(taskItem)
-        
         saveToLocalStorge(taskInput.value)
         taskInput.value=""
-
-        const check=document.createElement('input')
-        check.type="checkbox"
-        check.setAttribute("class","check")
-        taskItem.appendChild(check)
-
-        const Edit =document.createElement('i')
-        Edit.classList.add("fas","fa-edit")
-        taskItem.appendChild(Edit)
-        Edit.addEventListener("click",edit)
-
-        const trash=document.createElement('i')
-        trash.classList.add("fa","fa-trash")
-        taskItem.appendChild(trash)
-        trash.addEventListener("click",delet)
-
-        taskContainer.value=""
     }
+}
+function saveToLocalStorge(taskContent){
+    const task ={
+        id : Date.now() ,
+        title: taskContent ,
+        completed: false ,
+    };
+    let todos ;
+    if(localStorage.getItem('todos')==null){
+        todos=[]
+    }else{
+        todos=JSON.parse(localStorage.getItem('todos'))
+    }
+    todos.push(task)
+    localStorage.setItem('todos',JSON.stringify(todos))
+    console.log(todos)
 }
