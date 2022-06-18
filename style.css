@@ -80,13 +80,14 @@ body {
 
 body.dark {
 	background: #292C35;
+    /* background: linear-gradient(to top, #362147, #292C35); */
 }
 
 form{
     position: absolute;
-    top:28%;
+    top:27%;
     left:33%;
-    background-color: rgb(148, 146, 146);
+    background-color: rgb(211, 192, 105);
     border-radius: 6px ;
     padding:15px;
     display: flex;
@@ -110,4 +111,39 @@ form{
     color: #292C35;
     border-radius:0 6px 6px 0;
     cursor: pointer;
+}
+section {
+    background-color: rgb(255, 255, 255, 0.5);
+    padding: 1.5rem 0.5rem;
+    width: 45%;
+    margin: 3rem auto 0;
+    height: 41rem;
+    border-radius: 5px;
+  }
+.todo-list-container {
+    margin-top: 11%;
+    overflow: auto;
+    height: 32rem;
+  }
+  .todo-list li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    background-color: rgb(227, 185, 87);
+    height: 3.2rem;
+    padding: 0.6rem;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+  li .AcionsIcon {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 0 5px;
+    width: 25%;
+    padding-top: 0.5rem;
+  }
+.AcionsIcon i{
+    padding: 0 5px;
 }

@@ -1,7 +1,7 @@
 const chk = document.getElementById('chk');
 const date = new Date();
 const format = { weekday: "long", month: "short", day: "numeric" };
-const taskContainer =document.querySelector('.tasks-container')
+const taskContainer =document.querySelector('.todo-list')
 const taskInput=document.querySelector('.task-input')
 const addBoutton = document.querySelector('.Add-boutton')
 
@@ -13,8 +13,8 @@ chk.addEventListener('change', () => {
 });
 getData();
 
-addBoutton.onclick = function (e){
-    e.preventDefault()
+addBoutton.onclick = function (){
+    // e.preventDefault()
     if(taskInput.value){
         saveToLocalStorge(taskInput.value)
         taskInput.value=""
@@ -67,10 +67,12 @@ function AddTasks(todos){
             }
         })
 
-        taskItem.innerHTML=task.title
+        taskItem.textContent=task.title
         taskdiv.appendChild(taskItem)
         taskItem.appendChild(check)
-
+        const Actions =document.createElement("div")
+        Actions.setAttribute("class","AcionsIcon")
+        taskItem.appendChild(Actions) 
 
         const Edit =document.createElement('i')
         Edit.classList.add("fas","fa-edit")
@@ -81,6 +83,8 @@ function AddTasks(todos){
         trash.classList.add("fa","fa-trash")
         taskItem.appendChild(trash)
         trash.addEventListener("click",delet)
+        Actions.append(trash,Edit)
+        // Actions.appendChild(Edit,trash)
         
     });
 }
