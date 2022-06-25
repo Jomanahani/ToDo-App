@@ -14,7 +14,6 @@ chk.addEventListener('change', () => {
 getData();
 
 addBoutton.onclick = function (){
-    // e.preventDefault()
     if(taskInput.value){
         saveToLocalStorge(taskInput.value)
         taskInput.value=""
@@ -42,34 +41,42 @@ function AddTasks(todos){
     todos.forEach(task => {
         let taskdiv = document.createElement('div') 
         taskdiv.setAttribute("class","task")
+        taskdiv.setAttribute("task-id",task.id)
+
         taskContainer.appendChild(taskdiv)
         let taskItem = document.createElement('li')
 
-        let check = document.createElement('i')
+        let check = document.createElement('input')
+        check.type="checkbox"
+        check.classList.add("checkbox")
 
-        if(task.completed){
-            check.classList.add("fa","fa-check-circle")
-            taskItem.classList.add('lineThrough');
-        }else{
-            check.classList.add("fa-regular","fa-circle")
-        }
+        // if(task.completed){
+        //     check.classList.add("fa","fa-check-circle")
+        //     taskItem.classList.add('lineThrough');
+        // }else{
+        //     check.classList.add("fa-regular","fa-circle")
+        // }
 
-        check.addEventListener("click",()=>{
-            if(task.completed){
-                check.classList.add("fa-regular","fa-circle")
-                taskItem.classList.remove('lineThrough');
-                task.completed = false
+        // check.addEventListener("click",()=>{
+        //     if(task.completed){
+        //         check.classList.add("fa-regular","fa-circle")
+        //         taskItem.classList.remove('lineThrough');
+        //         task.completed = false
 
-            }else{
-                check.classList.add("fa","fa-check-circle")
-                taskItem.classList.add('lineThrough');
-                task.completed=true
-            }
-        })
+        //     }else{
+        //         check.classList.add("fa","fa-check-circle")
+        //         taskItem.classList.add('lineThrough');
+        //         task.completed=true
+        //     }
+        // })
 
-        taskItem.textContent=task.title
+        let paragraph = document.createElement("p")
+        paragraph.classList.add("text")
+        paragraph.textContent=task.title
         taskdiv.appendChild(taskItem)
         taskItem.appendChild(check)
+        taskItem.appendChild(paragraph)
+
         const Actions =document.createElement("div")
         Actions.setAttribute("class","AcionsIcon")
         taskItem.appendChild(Actions) 
@@ -84,7 +91,6 @@ function AddTasks(todos){
         taskItem.appendChild(trash)
         trash.addEventListener("click",delet)
         Actions.append(trash,Edit)
-        // Actions.appendChild(Edit,trash)
         
     });
 }
@@ -101,6 +107,14 @@ function edit(){
 
 }
 
-function delet(){
+function delet(e){
+    let li =e.target.parentElement.parentElement.parentElement
+    let liID = li.getAttribute("task-id") 
+    let tasks = JSON.parse(localStorage.getItem('todos'))
 
+    let task =  tasks.forEach((task)=>{if(task.id==liID){console.log(tasks.indexOf(task))}})
+    tasks.splice(task, 1);
+    //  save the new array in the local storage
+    localStorage.setItem('todos', JSON.stringify(tasks))
+    location.reload()
 }
