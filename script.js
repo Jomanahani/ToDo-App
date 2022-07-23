@@ -4,12 +4,24 @@ const format = { weekday: "long", month: "short", day: "numeric" };
 const taskContainer =document.querySelector('.todo-list')
 const taskInput=document.querySelector('.task-input')
 const addBoutton = document.querySelector('.Add-boutton')
+const header = document.querySelector('.header')
+const toDoIcon = document.querySelector('.fa-3x')
+const section = document.querySelector('.section')
+const form = document.querySelector('.form')
+const theDate =document.querySelector('.date')
 
 let text = date.toLocaleDateString("English", format);
 document.getElementById("date").textContent = text;
 
 chk.addEventListener('change', () => {
 	document.body.classList.toggle('dark');
+    header.classList.toggle("darkHead");
+    toDoIcon.classList.toggle("darkicon");
+    section.classList.toggle("darkSection");
+    taskContainer.classList.toggle("darkTask");
+    form.classList.toggle("darkForm")
+    addBoutton.classList.toggle("darkBoutton")
+    theDate.classList.toggle("darkDate")
 });
 getData();
 
