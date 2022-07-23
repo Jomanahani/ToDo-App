@@ -5,30 +5,31 @@
 }
 
 body {
-	background-color: #fafafa;
+    background: linear-gradient(to top, #D6CDEA, #F9EBDF);
 	transition: background 0.2s linear;
 }
 
 .header{
     height: 170px;
     width: 100%;
-    background-color: rgb(148, 146, 146);
+    background-color: #fbffd5;
     padding: 2%;
+    border-radius: 0 0 10px 10px;
 }
 .header h1{
     font-size: 3.6rem;
-    color: #292C35;
+    color: #D6CDEA;
 	display: inline-block;
     padding-left: 7px;
 
 }
-#date{
+.date{
 	display: inline-block;
 	padding: 0 1.2%;
-	color: #f9d751;
+	color: #7199c2;
 }
 .fa-tasks{
-    color: #292C35;
+    color: #D6CDEA;
 }
 .label{
     position: absolute;
@@ -79,15 +80,15 @@ body {
 }
 
 body.dark {
-	background: #292C35;
-    /* background: linear-gradient(to top, #362147, #292C35); */
+	/* background: #261a2b; */
+    background: linear-gradient(to top, #312437, #573a51);
 }
 
 form{
     position: absolute;
     top:27%;
     left:33%;
-    background-color: rgb(211, 192, 105);
+    background-color: #D6CDEA;
     border-radius: 6px ;
     padding:15px;
     display: flex;
@@ -98,7 +99,7 @@ form{
     width: 550px;
     height: 50px;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid rgb(255, 255, 255);
     border-right: 0px;
     border-radius: 6px 0 0 6px;
 }
@@ -106,19 +107,22 @@ form{
 .Add-boutton{
     height: 50px;
     width: 50px;
-    border: 1px solid #ddd;
+    border: 1px solid #ede1e2;
     border-left: 0px;
-    color: #292C35;
+    color: #315b84;
     border-radius:0 6px 6px 0;
     cursor: pointer;
+    font-size: 1rem;
+    background-color: #ede1e2;
 }
 section {
-    background-color: rgb(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.31);
     padding: 1.5rem 0.5rem;
     width: 45%;
     margin: 3rem auto 0;
     height: 41rem;
     border-radius: 5px;
+    color: #315b84;
   }
 .todo-list-container {
     margin-top: 11%;
@@ -130,7 +134,7 @@ section {
     display: flex;
     justify-content: space-between;
     margin: 1rem;
-    background-color: rgb(227, 185, 87);
+    background-color: #D6CDEA;
     height: 3.2rem;
     padding: 0.6rem;
     border-radius: 5px;
@@ -146,4 +150,35 @@ section {
   }
 .AcionsIcon i{
     padding: 0 5px;
+}
+.darkHead{
+    background-color:#9d8197;
+    /* background-color:#807794; */
+}
+.darkHead h1{
+    color:#493551;
+} 
+.darkicon{
+    color:#493551;
+}
+.darkHead h2{
+     color: #f0f4c3;
+}
+.darkSection{
+    background-color:#e5d1e974;
+    color: #f0f4c3;
+}
+.darkTask li{
+    background-color: #493551;
+}
+.darkForm{
+    background-color: #493551;
+}
+.darkBoutton{
+    background-color: #9d8197;
+    color: #f0f4c3;
+    border: 1px solid #9d8197;
+}
+.darkDate{
+    color: #f0f4c3;
 }
