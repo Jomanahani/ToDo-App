@@ -82,9 +82,11 @@ function AddTasks(todos){
         //     }
         // })
 
-        let paragraph = document.createElement("p")
-        paragraph.classList.add("text")
-        paragraph.textContent=task.title
+        let paragraph = document.createElement("input")
+        paragraph.type="text"
+        paragraph.classList.add("para")
+        paragraph.value=task.title
+        paragraph.setAttribute('readonly', 'readonly');
         taskdiv.appendChild(taskItem)
         taskItem.appendChild(check)
         taskItem.appendChild(paragraph)
@@ -115,8 +117,15 @@ function getData(){
     }
 }
 
-function edit(){
-
+function edit(Edit){
+    if (Edit.innerHTML == '<i class="fas fa-edit"></i>') {
+        Edit.innerHTML = '<i class="fa fa-check"></i>';
+        paragraph.removeAttribute("readonly");
+        paragraph.focus();
+    } else {
+        Edit.innerHTML = '<i class="fas fa-edit""></i>';
+        paragraph.setAttribute("readonly", "readonly");
+    }
 }
 
 function delet(e){
