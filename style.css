@@ -1,184 +1,205 @@
 * {
-	box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-
 body {
-    background: linear-gradient(to top, #D6CDEA, #F9EBDF);
-	transition: background 0.2s linear;
+  background: linear-gradient(to top, #d6cdea, #f9ebdf);
+  transition: background 0.2s linear;
 }
-
-.header{
-    height: 170px;
-    width: 100%;
-    background-color: #fbffd5;
-    padding: 2%;
-    border-radius: 0 0 10px 10px;
+.header {
+  height: 160px;
+  width: 100%;
+  background-color: #fbffd5;
+  padding: 2.5%;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 3px 4px 12px #8b8989d9;
 }
-.header h1{
-    font-size: 3.6rem;
-    color: #D6CDEA;
-	display: inline-block;
-    padding-left: 7px;
-
+.header h1 {
+  font-size: 3.6rem;
+  color: #d6cdea;
+  display: inline-block;
+  padding-left: 7px;
 }
-.date{
-	display: inline-block;
-	padding: 0 1.2%;
-	color: #7199c2;
+.date {
+  display: inline-block;
+  padding: 0 1.2%;
+  color: #7199c2;
 }
-.fa-tasks{
-    color: #D6CDEA;
+.fa-tasks {
+  color: #d6cdea;
 }
-.label{
-    position: absolute;
-    left: 95%;
+.label {
+  position: absolute;
+  left: 95%;
 }
 .checkbox {
-	opacity: 0;
-	position: absolute;
+  opacity: 0;
+  position: absolute;
 }
-
 .label {
-	background-color: #111;
-	border-radius: 50px;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 6px;
-	position: relative;
-	height: 23px;
-	width: 48px;
-	transform: scale(1.5);
+  background-color: rgba(37, 37, 37, 0.9);
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 6px;
+  position: relative;
+  height: 23px;
+  width: 46px;
+  transform: scale(1.5);
 }
-
 .label .ball {
-	background-color: #fff;
-	border-radius: 50%;
-	position: absolute;
-	top: 2px;
-	left: 2px;
-	height: 20px;
-	width: 20px;
-	transform: translateX(0px);
-	transition: transform 0.2s linear;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 18px;
+  width: 18px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
 }
-
 .checkbox:checked + .label .ball {
-	transform: translateX(24px);
+  transform: translateX(24px);
 }
-
-
 .fa-moon {
-	color: #f9d751;
+  color: #f9d751;
+  font-size: 13px;
 }
-
 .fa-sun {
-	color: #f2a52a;
+  color: #f2a52a;
+  font-size: 14px;
 }
-
 body.dark {
-	/* background: #261a2b; */
-    background: linear-gradient(to top, #312437, #573a51);
+  background: linear-gradient(to top, #312437, #573a51);
 }
-
-form{
-    position: absolute;
-    top:27%;
-    left:33%;
-    background-color: #D6CDEA;
-    border-radius: 6px ;
-    padding:15px;
-    display: flex;
-    align-items: center;
+form {
+  position: relative;
+  margin: 3px 15px;
+  background-color: #d6cdea;
+  border-radius: 6px;
+  padding: 14px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.task-input{
-    width: 550px;
-    height: 50px;
-    padding: 10px;
-    border: 1px solid rgb(255, 255, 255);
-    border-right: 0px;
-    border-radius: 6px 0 0 6px;
+.task-input {
+  width: 540px;
+  height: 50px;
+  padding: 10px;
+  outline: none;
+  border: 1px solid rgb(255, 255, 255);
+  border-right: 0px;
+  border-radius: 6px 0 0 6px;
 }
-
-.Add-boutton{
-    height: 50px;
-    width: 50px;
-    border: 1px solid #ede1e2;
-    border-left: 0px;
-    color: #315b84;
-    border-radius:0 6px 6px 0;
-    cursor: pointer;
-    font-size: 1rem;
-    background-color: #ede1e2;
+.task-input::placeholder {
+  letter-spacing: 1px;
+  line-height: 5px;
 }
-section {
-    background-color: rgba(255, 255, 255, 0.31);
-    padding: 1.5rem 0.5rem;
-    width: 45%;
-    margin: 3rem auto 0;
-    height: 41rem;
-    border-radius: 5px;
-    color: #315b84;
-  }
+.Add-boutton {
+  height: 50px;
+  width: 50px;
+  border: 1px solid #ede1e2;
+  border-left: 0px;
+  color: #315b84;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  background-color: #ede1e2;
+}
+.section {
+  background-color: rgba(255, 255, 255, 0.31);
+  padding: 1.5rem 0.5rem;
+  width: 45%;
+  margin: 2rem auto;
+  margin-bottom: 3.6rem;
+  height: 40rem;
+  border-radius: 5px;
+  color: #315b84;
+}
+.para {
+  background-color: #d6cdea;
+  color: #315b84;
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+}
 .todo-list-container {
-    margin-top: 11%;
-    overflow: auto;
-    height: 32rem;
-  }
-  .todo-list li {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    margin: 1rem;
-    background-color: #D6CDEA;
-    height: 3.2rem;
-    padding: 0.6rem;
-    border-radius: 5px;
-    font-size: 1.3rem;
-    cursor: pointer;
-  }
-  li .AcionsIcon {
-    display: flex;
-    flex-direction: row-reverse;
-    margin: 0 5px;
-    width: 25%;
-    padding-top: 0.5rem;
-  }
-.AcionsIcon i{
-    padding: 0 5px;
+  margin: 0.5rem auto;
+  overflow: auto;
+  height: 31rem;
 }
-.darkHead{
-    background-color:#9d8197;
-    /* background-color:#807794; */
+.todo-list li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.7rem 1rem;
+  background-color: #d6cdea;
+  height: 3.2rem;
+  padding: 0.6rem;
+  border-radius: 5px;
+  cursor: pointer;
 }
-.darkHead h1{
-    color:#493551;
-} 
-.darkicon{
-    color:#493551;
+li .AcionsIcon {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0 5px;
+  width: 25%;
+  padding-top: 0.5rem;
 }
-.darkHead h2{
-     color: #f0f4c3;
+.AcionsIcon i {
+  padding: 0 6px;
+  padding-bottom: 2px;
+  font-size: 1.3rem;
 }
-.darkSection{
-    background-color:#e5d1e974;
-    color: #f0f4c3;
+.darkHead {
+  background-color: #9d8197;
 }
-.darkTask li{
-    background-color: #493551;
+.darkHead h1 {
+  color: #493551;
 }
-.darkForm{
-    background-color: #493551;
+.darkicon {
+  color: #493551;
 }
-.darkBoutton{
-    background-color: #9d8197;
-    color: #f0f4c3;
-    border: 1px solid #9d8197;
+.darkHead h2 {
+  color: #f0f4c3;
 }
-.darkDate{
-    color: #f0f4c3;
+.darkSection {
+  background-color: #e5d1e974;
+  color: #f0f4c3;
+}
+.darkTask li {
+  background-color: #493551;
+}
+.darkTask input {
+  background-color: #493551;
+  color: #f0f4c3;
+}
+.darkForm {
+  background-color: #493551;
+}
+.darkBoutton {
+  background-color: #9d8197;
+  color: #f0f4c3;
+  border: 1px solid #9d8197;
+}
+.darkDate {
+  color: #f0f4c3;
+}
+.darkinput {
+  background-color: #493551;
+  color: #f0f4c3;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(transparent, #e6e8cbd1, #58485f);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
 }
