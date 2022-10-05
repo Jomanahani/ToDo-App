@@ -59,42 +59,31 @@ function AddTasks(todos){
         let taskItem = document.createElement('li')
 
         let check = document.createElement('div')
-        // taskContainer.appendChild(check)
+        check.classList.add('check')
 
-        check.innerHTML=='<i class="fa fa-circle-thin"></i>';
+        if(task.completed){
+            check.innerHTML = '<i class="fa fa-check-circle green"></i>';
+            taskdiv.setAttribute("class","done")
 
+        }else{
+            check.innerHTML='<i class="fa-regular fa-circle"></i>';
+            taskdiv.classList.remove('done');
 
-        // check.classList.add("fa","fa-check-circle")
-
-        // if(task.completed){
-            // taskItem.classList.add('lineThrough');
-        // }else{
-        //     check.classList.add("fa-regular","fa-circle")
-        // }
+        }
 
         check.addEventListener("click",()=>{
-            console.log(task.id)
-            console.log(task.completed)
-                if (check.innerHTML == '<i class="fa fa-circle-thin"></i>') {
-                    check.innerHTML = '<i class="fa fa-check-circle"></i>';
-                    // task_input_el.classList.add('lineThrough');
+                if (check.innerHTML == '<i class="fa-regular fa-circle"></i>') {
+                    check.innerHTML = '<i class="fa fa-check-circle green"></i>';
+                    taskdiv.setAttribute("class","done")
+
+                    task.completed=true;
+                    Update(task.id,task.completed)
                 } else {
-                    check.innerHTML = '<i class="fa fa-circle-thin"></i>';
-                    // task_input_el.classList.remove('lineThrough');
+                    check.innerHTML = '<i class="fa-regular fa-circle"></i>';
+                    taskdiv.classList.remove('done');
+                    task.completed=false;
+                    Update(task.id,task.completed)
                 }
-
-            if(task.completed){
-                check.classList.add("fa-regular","fa-circle")
-                // taskItem.classList.remove('fa-check-circle');
-                // taskItem.classList.remove('fa');
-
-                // taskItem.classList.remove('lineThrough');
-                task.completed = false;
-            }else{
-                check.classList.add("fa","fa-check-circle")
-                // taskItem.classList.add('lineThrough');
-                task.completed=true;
-            }
         })
 
         let paragraph = document.createElement("input")
@@ -118,12 +107,10 @@ function AddTasks(todos){
             if (Edit.innerHTML == '<i class="fas fa-edit"></i>') {
                 Edit.innerHTML = '<i class="fa fa-check"></i>';
                 paragraph.removeAttribute("readonly");
-                // task.title=paragraph.value;
                 paragraph.focus();
             } else {
                 Edit.innerHTML = '<i class="fas fa-edit""></i>';
                 saveEdit(task.id, paragraph.value);
-                // task.title=paragraph.value;
                 paragraph.setAttribute("readonly", "readonly");
             }
         });
@@ -144,7 +131,15 @@ function saveEdit(id, newValue){
         task.title=newValue;
 }})
 localStorage.setItem('todos', JSON.stringify(tasks))
-}
+};
+
+function Update(id, completed){
+    let tasks = JSON.parse(localStorage.getItem('todos'))
+    let updateCom = tasks.forEach((task)=>{if(task.id==id){
+        task.completed=completed;
+        localStorage.setItem('todos', JSON.stringify(tasks))
+}})
+};
 
 function getData(){
     let data = window.localStorage.getItem("todos")

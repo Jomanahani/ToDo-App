@@ -120,8 +120,9 @@ form {
   color: #315b84;
 }
 .para {
-  background-color: #d6cdea;
+  background-color: inherit;
   color: #315b84;
+  width: 85%;
   border: none;
   outline: none;
   font-size: 1.4rem;
@@ -141,6 +142,36 @@ form {
   padding: 0.6rem;
   border-radius: 5px;
   cursor: pointer;
+}
+.check{
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 12px;
+}
+.green{
+  color: rgb(75, 194, 75);
+}
+.done{
+  color: #315b84c3;
+}
+.done input{
+  text-decoration: line-through;
+  color: #315b84c3;
+}
+.done li{
+  background-color: #c0bdc6;
+}
+.darkTask .done{
+  color: #f0f4c3c3;
+}
+.darkTask .done input{
+  background-color: inherit;
+  color: #f0f4c3c3;
+}
+.darkTask .done li{
+  background-color: #716d78;
 }
 li .AcionsIcon {
   display: flex;
